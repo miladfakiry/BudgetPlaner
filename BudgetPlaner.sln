@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{BFDD0453-C755-4874-AB30-284B4978ECE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BudgetPlaner.Domain", "src\BudgetPlaner.Domain\BudgetPlaner.Domain.csproj", "{588F091E-06DB-4437-A3F8-C96DA68A4D6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BudgetPlaner.Infrastructure", "src\BudgetPlaner.Infrastructure\BudgetPlaner.Infrastructure.csproj", "{1CD2055D-281D-4882-8A68-AC0E2AF1E7EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BudgetPlaner.Api", "src\BudgetPlaner.Api\BudgetPlaner.Api.csproj", "{9674BAB8-297A-4DE9-8892-9587BB3486CE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{C3148F88-0ACA-4318-A588-A871890C7A1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BudgetPlaner.UnitTests", "tests\BudgetPlaner.UnitTests\BudgetPlaner.UnitTests.csproj", "{CC205197-FD2B-4F38-ACCF-4C39A482B685}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BudgetPlaner.Application", "src\BudgetPlaner.Application\BudgetPlaner.Application.csproj", "{38569FB0-BAE9-4051-BC24-A57B4864BFF4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{588F091E-06DB-4437-A3F8-C96DA68A4D6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{588F091E-06DB-4437-A3F8-C96DA68A4D6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{588F091E-06DB-4437-A3F8-C96DA68A4D6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{588F091E-06DB-4437-A3F8-C96DA68A4D6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CD2055D-281D-4882-8A68-AC0E2AF1E7EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CD2055D-281D-4882-8A68-AC0E2AF1E7EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CD2055D-281D-4882-8A68-AC0E2AF1E7EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CD2055D-281D-4882-8A68-AC0E2AF1E7EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9674BAB8-297A-4DE9-8892-9587BB3486CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9674BAB8-297A-4DE9-8892-9587BB3486CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9674BAB8-297A-4DE9-8892-9587BB3486CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9674BAB8-297A-4DE9-8892-9587BB3486CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC205197-FD2B-4F38-ACCF-4C39A482B685}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC205197-FD2B-4F38-ACCF-4C39A482B685}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC205197-FD2B-4F38-ACCF-4C39A482B685}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC205197-FD2B-4F38-ACCF-4C39A482B685}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38569FB0-BAE9-4051-BC24-A57B4864BFF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38569FB0-BAE9-4051-BC24-A57B4864BFF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38569FB0-BAE9-4051-BC24-A57B4864BFF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38569FB0-BAE9-4051-BC24-A57B4864BFF4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{588F091E-06DB-4437-A3F8-C96DA68A4D6C} = {BFDD0453-C755-4874-AB30-284B4978ECE6}
+		{1CD2055D-281D-4882-8A68-AC0E2AF1E7EE} = {BFDD0453-C755-4874-AB30-284B4978ECE6}
+		{9674BAB8-297A-4DE9-8892-9587BB3486CE} = {BFDD0453-C755-4874-AB30-284B4978ECE6}
+		{CC205197-FD2B-4F38-ACCF-4C39A482B685} = {C3148F88-0ACA-4318-A588-A871890C7A1F}
+		{38569FB0-BAE9-4051-BC24-A57B4864BFF4} = {BFDD0453-C755-4874-AB30-284B4978ECE6}
+	EndGlobalSection
+EndGlobal
