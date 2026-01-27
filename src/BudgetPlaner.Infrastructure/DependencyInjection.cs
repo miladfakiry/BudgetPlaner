@@ -1,8 +1,8 @@
-﻿using BudgetPlaner.Infrastructure.Persistence;
+﻿using BudgetPlaner.Application.Common.Interfaces;
+using BudgetPlaner.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System.Runtime.CompilerServices;
 
 namespace BudgetPlaner.Infrastructure;
 
@@ -14,6 +14,8 @@ public static class DependencyInjection
 
         services.AddDbContext<ApplicationDbContext>(options =>
         options.UseNpgsql(connectionString));
+
+        services.AddScoped<IApplicationDbContext>(provider => provider.GetRequiredService<ApplicationDbContext>());
 
         return services;
     }

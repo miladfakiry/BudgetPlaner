@@ -1,11 +1,11 @@
 ﻿using BudgetPlaner.Domain.Entities;
+using BudgetPlaner.Application.Common.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
 namespace BudgetPlaner.Infrastructure.Persistence
-{
-    // Falls du das Interface IApplicationDbContext schon implementiert hast, lass es stehen.
-    public class ApplicationDbContext : DbContext
+{ 
+    public class ApplicationDbContext : DbContext, IApplicationDbContext
     {
         // Pass configuration options (e.g. ConnectionString) to the base DbContext class.
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
