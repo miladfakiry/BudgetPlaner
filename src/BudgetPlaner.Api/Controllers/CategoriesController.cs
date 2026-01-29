@@ -18,9 +18,9 @@ namespace BudgetPlaner.Api.Controllers
         [HttpPost]
         public async Task<ActionResult<Guid>> Create(CreateCategoryCommand command)
         {
-            // Wir schicken den Befehl los. Wer ihn bearbeitet (Handler), ist dem Controller egal.
+            // We send the command. Who handles it (handler) is not the controller's concern.
             var id = await _mediator.Send(command);
-            // Wir geben die ID der neuen Kategorie zurück
+            // We give back the ID of the new category
             return Ok(id);
         }
 

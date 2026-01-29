@@ -11,7 +11,7 @@ namespace BudgetPlaner.Application
     {
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
-            // Scannt die aktuelle Assembly (das Application Projekt) nach Handlern und registriert sie automatisch.
+            // Scans the current assembly (the Application project) for handlers and registers them automatically.
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
 
             return services;
