@@ -35,12 +35,17 @@ public class Transaction : BaseEntity
     // Domain Logic / Behavior:
     // Instead of public setters (Anemic Model), we use semantic methods to mutate state.
     // This allows us to encapsulate validation logic and business rules.
-    public void UpdateDetails(string description, decimal amount, DateTime date, Guid categoryId)
+    public void UpdateDetails(string description, decimal amount, DateTime date, TransactionType type, Guid categoryId)
     {
+        if (amount < 0)
+        {
+            throw new ArgumentException("Amount cannot be negative.");
+        }
         // Potential business validation logic goes here...
         Description = description;
         Amount = amount;
         Date = date;
+        Type = Type;
         CategoryId = categoryId;
 
         UpdateLastModified(); // Update audit trail from BaseEntity

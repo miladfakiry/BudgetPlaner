@@ -1,4 +1,6 @@
 ﻿using BudgetPlaner.Application.Transactions.Commands.CreateTransaction;
+using BudgetPlaner.Application.Transactions.Commands.DeleteTransaction;
+using BudgetPlaner.Application.Transactions.Commands.UpdateTransaction;
 using BudgetPlaner.Application.Transactions.Queries.GetTransactions;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -30,6 +32,24 @@ namespace BudgetPlaner.Api.Controllers
 
             // We return the ID of the new transaction
             return Ok(id);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult> Update(Guid id, UpdateTransactionCommand command)
+        {
+            if (id != command.Id)
+            {
+                return BadRequest("ID in URL passt nicht zur ID im Body.");
+            }
+            await _mediator.Send(command);
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> Delete(Guid id)
+        {
+            await _mediator.Send(new DeleteTransactionCommand(id));
+            return NoContent();
         }
 
     }
