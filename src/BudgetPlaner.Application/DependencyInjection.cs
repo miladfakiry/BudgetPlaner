@@ -1,10 +1,8 @@
 ﻿using FluentValidation;
+using MediatR;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
 using System.Reflection;
-using System.Runtime.CompilerServices;
-using System.Text;
+using BudgetPlaner.Application.Common.Behaviours;
 
 namespace BudgetPlaner.Application
 {
@@ -12,8 +10,13 @@ namespace BudgetPlaner.Application
     {
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
-            // Scans the current assembly (the Application project) for handlers and registers them automatically.
-            services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
+            services.AddMediatR(cfg => {
+                cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
+
+                // --- NEU: Hier registrieren wir die Pipeline ---
+                // Das sagt: "Für jede Request/Response Pipeline, schalte das ValidationBehaviour dazwischen."
+                cfg.AddBehavior(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
+            });
 
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
