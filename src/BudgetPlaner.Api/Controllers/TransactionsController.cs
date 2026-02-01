@@ -1,6 +1,7 @@
 ﻿using BudgetPlaner.Application.Transactions.Commands.CreateTransaction;
 using BudgetPlaner.Application.Transactions.Commands.DeleteTransaction;
 using BudgetPlaner.Application.Transactions.Commands.UpdateTransaction;
+using BudgetPlaner.Application.Transactions.Queries.GetBalance;
 using BudgetPlaner.Application.Transactions.Queries.GetTransactions;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -21,6 +22,13 @@ namespace BudgetPlaner.Api.Controllers
         public async Task<ActionResult<List<TransactionDto>>> GetAll()
         {
             var result = await _mediator.Send(new GetTransactionsQuery());
+            return Ok(result);
+        }
+
+        [HttpGet("balance")]
+        public async Task<ActionResult<BalanceDto>> GetBalance()
+        {
+            var result = await _mediator.Send(new GetBalanceQuery());
             return Ok(result);
         }
 
